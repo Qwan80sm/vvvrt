@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل الفيديو</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تشغيل الفيديو</h1>
+        <div class="video-container">
+            <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <a class="back-link" href="index.html">&#8592; العودة إلى الصفحة الرئيسية</a>
+    </div><script>
+    // الحصول على رابط الفيديو من الرابط
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoUrl = urlParams.get('url');
+    
+    if (videoUrl) {
+        document.getElementById('videoFrame').src = videoUrl;
+    }
+</script>
+
+</body>
+</html>
